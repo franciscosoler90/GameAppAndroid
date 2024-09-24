@@ -41,14 +41,14 @@ git clone https://github.com/fransolerc/GameNexus.git
 
 3. Configura Firebase: Agrega tu archivo `google-services.json` al directorio `/app`.
 
-4. Obtén la clave de API de RAWG:
+4. Regístrate en RAWG y genera una clave de API:
 
-- Regístrate en RAWG y genera una clave de API.
-- Añade la clave en tu archivo `local.properties`:
+5. Crear un archivo `.env` en la raíz del proyecto con tu clave de API de RAWG:
+
 ```bash
-API_KEY_RAWG="TU_CLAVE_DE_API"
+API_KEY="TU_CLAVE_DE_API"
 ```
-5. Ejecuta la aplicación desde Android Studio en un emulador o dispositivo físico.
+6. Ejecuta la aplicación desde **Android Studio** en un emulador o dispositivo físico.
 
 
 ![picture1](pictures/1.png)
