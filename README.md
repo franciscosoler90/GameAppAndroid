@@ -50,12 +50,31 @@ API_KEY_RAWG="TU_CLAVE_DE_API"
 ```
 5. Ejecuta la aplicación desde Android Studio en un emulador o dispositivo físico.
 
-![picture1](pictures/1.png)
+<p>
+  <img src="/pictures/1.png" alt="picture1">
+</p>
+<p>
+  <img src="/pictures/2.png" alt="picture2">
+</p>
+<p>
+  <img src="/pictures/5.png" alt="picture5">
+</p>
+<p>
+  <img src="/pictures/6.png" alt="picture6">
+</p>
+<p>
+  <img src="/pictures/7.png" alt="picture7">
+</p>
+<p>
+  <img src="/pictures/8.png" alt="picture8">
+</p>
+<p>
+  <img src="/pictures/8.png" alt="picture8">
+</p>
+
+![1.png](pictures/1.png)
 ![picture2](pictures/2.png)
-![picture3](pictures/3.png)
-![picture4](pictures/4.png)
 ![picture5](pictures/5.png)
 ![picture6](pictures/6.png)
 ![picture7](pictures/7.png)
 ![picture8](pictures/8.png)
-
