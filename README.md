@@ -52,8 +52,8 @@ API_KEY="TU_CLAVE_DE_API"
 
 
 ![picture1](https://github.com/fransolerc/GameNexusFiles/blob/main/images/1.png)
-![picture2](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/2.png)
-![picture5](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/5.png)
-![picture6](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/6.png)
-![picture7](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/7.png)
-![picture8](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/8.png)
+![picture2](https://github.com/fransolerc/GameNexusFiles/blob/main/images/2.png)
+![picture5](https://github.com/fransolerc/GameNexusFiles/blob/main/images/5.png)
+![picture6](https://github.com/fransolerc/GameNexusFiles/blob/main/images/6.png)
+![picture7](https://github.com/fransolerc/GameNexusFiles/blob/main/images/7.png)
+![picture8](https://github.com/fransolerc/GameNexusFiles/blob/main/images/8.png)
