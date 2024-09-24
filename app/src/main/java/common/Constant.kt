@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Francisco José Soler Conchello
+ * Copyright (c) 2024. Francisco José Soler Conchello
  */
 
 package common
