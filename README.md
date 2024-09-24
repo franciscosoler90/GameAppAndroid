@@ -51,9 +51,9 @@ API_KEY="TU_CLAVE_DE_API"
 6. Ejecuta la aplicación desde **Android Studio** en un emulador o dispositivo físico.
 
 
-![picture1](pictures/1.png)
-![picture2](pictures/2.png)
-![picture5](pictures/5.png)
-![picture6](pictures/6.png)
-![picture7](pictures/7.png)
-![picture8](pictures/8.png)
+![picture1](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/1.png)
+![picture2](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/2.png)
+![picture5](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/5.png)
+![picture6](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/6.png)
+![picture7](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/7.png)
+![picture8](https://raw.githubusercontent.com/fransolerc/GameNexusFiles/images/8.png)
