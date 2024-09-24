@@ -33,14 +33,29 @@
 Para ejecutar el proyecto localmente, sigue estos pasos:
 
 1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/fransolerc/GameNexus.git
+```bash
+git clone https://github.com/fransolerc/GameNexus.git
+```
 
-<p align="center"><img src="/pictures/1.png" alt="picture1"></p>
-<p align="center"><img src="/pictures/2.png" alt="picture2"></p>
-<p align="center"><img src="/pictures/3.png" alt="picture3"></p>
-<p align="center"><img src="/pictures/4.png" alt="picture4"></p>
-<p align="center"><img src="/pictures/5.png" alt="picture5"></p>
-<p align="center"><img src="/pictures/6.png" alt="picture6"></p>
-<p align="center"><img src="/pictures/7.png" alt="picture7"></p>
-<p align="center"><img src="/pictures/8.png" alt="picture8"></p>
+2. Abre el proyecto en Android Studio.
+
+3. Configura Firebase: Agrega tu archivo `google-services.json` al directorio `/app`.
+
+4. Obtén la clave de API de RAWG:
+
+- Regístrate en RAWG y genera una clave de API.
+- Añade la clave en tu archivo `local.properties`:
+```bash
+API_KEY_RAWG="TU_CLAVE_DE_API"
+```
+5. Ejecuta la aplicación desde Android Studio en un emulador o dispositivo físico.
+
+![picture1](pictures/1.png)
+![picture2](pictures/2.png)
+![picture3](pictures/3.png)
+![picture4](pictures/4.png)
+![picture5](pictures/5.png)
+![picture6](pictures/6.png)
+![picture7](pictures/7.png)
+![picture8](pictures/8.png)
+
