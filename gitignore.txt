@@ -1,2 +1,0 @@
-# Ignora carpetas de entorno de desarrollo
-.idea/
