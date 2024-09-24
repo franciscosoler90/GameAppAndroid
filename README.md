@@ -22,6 +22,20 @@
 
 - **Búsqueda avanzada**: GameNexus permite a los usuarios buscar videojuegos por género, plataforma, fecha de lanzamiento y otros criterios a través de consultas avanzadas a la API de RAWG.
 
+- - **Detalle de juegos**: Los usuarios pueden acceder a información detallada sobre cada videojuego, incluyendo descripciones, reseñas, clasificaciones y capturas de pantalla.
+  
+- **Gestión de favoritos**: Los usuarios pueden agregar juegos a su lista de favoritos para un acceso rápido a títulos de interés.
+  
+- **Autenticación de usuarios**: El sistema de autenticación, apoyado por Firebase, permite a los usuarios registrarse, iniciar sesión de forma segura y gestionar su cuenta.
+
+## Instalación
+
+Para ejecutar el proyecto localmente, sigue estos pasos:
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/fransolerc/GameNexus.git
+
 <p align="center"><img src="/pictures/1.png" alt="picture1"></p>
 <p align="center"><img src="/pictures/2.png" alt="picture2"></p>
 <p align="center"><img src="/pictures/3.png" alt="picture3"></p>
