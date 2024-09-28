@@ -38,11 +38,11 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
         val gameDatabase = Room.databaseBuilder(applicationContext, GameDatabase::class.java, "game-db").fallbackToDestructiveMigration().build()
         gameInfoViewModel = GameInfoViewModel(gameDatabase)
 
-        platformId = intent.getIntExtra(Constant.platformId,0)
-        page = intent.getIntExtra(Constant.page,1)
-        destination = intent.getIntExtra(Constant.destination,1)
+        platformId = intent.getIntExtra(Constant.PLATFORM_ID,0)
+        page = intent.getIntExtra(Constant.PAGE,1)
+        destination = intent.getIntExtra(Constant.DESTINATION,1)
 
-        val gameId = intent.getLongExtra(Constant.gameId,0)
+        val gameId = intent.getLongExtra(Constant.GAME_ID,0)
 
         val currentUser = FirebaseAuth.getInstance().currentUser
         val userId = currentUser?.uid
@@ -66,8 +66,8 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
             0 -> {
                 // Lógica para manejar el caso de Home
                 val intent = Intent(baseContext,GameListActivity::class.java)
-                intent.putExtra(Constant.platformId, platformId)
-                intent.putExtra(Constant.page, page)
+                intent.putExtra(Constant.PLATFORM_ID, platformId)
+                intent.putExtra(Constant.PAGE, page)
                 startActivity(intent)
             }
             1 -> {

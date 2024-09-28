@@ -28,8 +28,8 @@ class GameListActivity : AppCompatActivity(), GameInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        platformId = intent.getIntExtra(Constant.platformId,0)
-        currentPage = intent.getIntExtra(Constant.page,1)
+        platformId = intent.getIntExtra(Constant.PLATFORM_ID,0)
+        currentPage = intent.getIntExtra(Constant.PAGE,1)
 
         setContent {
             AppTheme {
@@ -46,10 +46,10 @@ class GameListActivity : AppCompatActivity(), GameInterface {
     //Método que se llama al clicar en un juego
     override fun onClickGame(game: GameEntity) {
         val intent = Intent(this,GameInfoActivity::class.java)
-        intent.putExtra(Constant.destination, BottomBarState.HOME.ordinal)
-        intent.putExtra(Constant.gameId, game.id)
-        intent.putExtra(Constant.platformId, platformId)
-        intent.putExtra(Constant.page, currentPage)
+        intent.putExtra(Constant.DESTINATION, BottomBarState.HOME.ordinal)
+        intent.putExtra(Constant.GAME_ID, game.id)
+        intent.putExtra(Constant.PLATFORM_ID, platformId)
+        intent.putExtra(Constant.PAGE, currentPage)
         startActivity(intent)
     }
 

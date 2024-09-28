@@ -68,8 +68,8 @@ class FavoriteActivity : ComponentActivity(), NavigationInterface {
 
     override fun onClickGame(game: GameEntity) {
         val intent = Intent(this,GameInfoActivity::class.java)
-        intent.putExtra(Constant.destination, BottomBarState.FAVORITE.ordinal)
-        intent.putExtra(Constant.gameId, game.id)
+        intent.putExtra(Constant.DESTINATION, BottomBarState.FAVORITE.ordinal)
+        intent.putExtra(Constant.GAME_ID, game.id)
         startActivity(intent)
     }
 }

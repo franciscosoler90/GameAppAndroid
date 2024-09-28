@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), PlatformInterface, NavigationInterface
     //Método que se llama al clicar en una plataforma
     override fun onClickPlatform(platform: Platform) {
         val intent = Intent(this,GameListActivity::class.java)
-        intent.putExtra(Constant.platformId, platform.id)
+        intent.putExtra(Constant.PLATFORM_ID, platform.id)
         startActivity(intent)
     }
 

@@ -15,8 +15,8 @@ object ContextUtilities {
         val shareIntent = Intent().apply {
             action = Intent.ACTION_SEND
             type = "text/plain"
-            putExtra(Intent.EXTRA_SUBJECT, Constant.appName)
-            putExtra(Intent.EXTRA_TEXT, Constant.urlGames + game.slug)
+            putExtra(Intent.EXTRA_SUBJECT, Constant.APP_NAME)
+            putExtra(Intent.EXTRA_TEXT, Constant.URL + game.slug)
         }
         context.startActivity(Intent.createChooser(shareIntent, null))
     }
