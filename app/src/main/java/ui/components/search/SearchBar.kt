@@ -42,7 +42,6 @@ fun SearchBar(gameInterface: GameInterface, title: String) {
         shadowElevation = 0.dp,
         windowInsets = SearchBarDefaults.windowInsets,
         content = {
-            // Aquí puedes agregar contenido adicional, si es necesario.
         }
     )
 }

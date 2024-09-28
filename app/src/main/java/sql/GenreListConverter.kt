@@ -1,5 +1,0 @@
-package sql
-
-class GenreListConverter {
-
-}

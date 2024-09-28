@@ -31,7 +31,7 @@ fun GameItem(
     ) {
 
         NetworkImage(
-            url = game.backgroundImage,
+            url = game.background_image,
             modifier = Modifier
                 .fillMaxHeight()
                 .width(85.dp)

@@ -36,7 +36,7 @@ fun GamePoster(
             .height(300.dp)
     ) {
         NetworkImage(
-            url = game.backgroundImage,
+            url = game.background_image,
             modifier = Modifier.fillMaxSize()
         )
         Box(

@@ -9,7 +9,7 @@ data class Platform(
     @Json(name = "name") val name:String,
     @Json(name = "slug") val slug:String,
     @Json(name = "games_count") val gamesCount:Int,
-    @Json(name = "image_background") val imageBackground:String,
+    @Json(name = "image_background") val image_background:String,
     @Json(name = "description") val description:String
 )
 

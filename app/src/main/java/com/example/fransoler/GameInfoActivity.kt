@@ -1,5 +1,6 @@
 package com.example.fransoler
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -23,22 +24,33 @@ import viewmodels.GameListViewModel
 class GameInfoActivity : AppCompatActivity(), GameInterface {
 
     private var platformId: Int = 0
-    private var page : Int = 1
-    private var destination : Int = 1
+    private var page: Int = 1
+    private var destination: Int = 1
 
     private lateinit var gameInfoViewModel: GameInfoViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val gameDatabase = Room.databaseBuilder(applicationContext, GameDatabase::class.java, "game-db").fallbackToDestructiveMigration().build()
+        val gameDatabase = try {
+            DatabaseProvider.getDatabase(this)
+        } catch (e: Exception) {
+            println("Error creando la base de datos")
+            finish()
+            return
+        }
+
         gameInfoViewModel = GameInfoViewModel(gameDatabase)
 
-        platformId = intent.getIntExtra(Constant.PLATFORM_ID,0)
-        page = intent.getIntExtra(Constant.PAGE,1)
-        destination = intent.getIntExtra(Constant.DESTINATION,1)
+        platformId = intent.getIntExtra(Constant.PLATFORM_ID, 0)
+        page = intent.getIntExtra(Constant.PAGE, 1)
+        destination = intent.getIntExtra(Constant.DESTINATION, 1)
 
-        val gameId = intent.getLongExtra(Constant.GAME_ID,0)
+        val gameId = intent.getLongExtra(Constant.GAME_ID, -1)
+        if (gameId == -1L) {
+            finish()
+            return
+        }
 
         val currentUser = FirebaseAuth.getInstance().currentUser
         val userId = currentUser?.uid
@@ -98,5 +110,20 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
 
     }
 
+}
 
+object DatabaseProvider {
+    private var instance: GameDatabase? = null
+
+    fun getDatabase(context: Context): GameDatabase {
+        return instance ?: synchronized(this) {
+            val newInstance = Room.databaseBuilder(
+                context.applicationContext,
+                GameDatabase::class.java,
+                "game-db"
+            ).fallbackToDestructiveMigration().build()
+            instance = newInstance
+            newInstance
+        }
+    }
 }

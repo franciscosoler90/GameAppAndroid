@@ -4,7 +4,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
-    id 'com.google.devtools.ksp' version '1.9.21-1.0.15' apply false
+    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp' version '1.9.21-1.0.15'
 }
 
 android {
@@ -106,9 +107,9 @@ dependencies {
     implementation "androidx.navigation:navigation-compose:2.8.1"
 
     // Room (Runtime y ksp)
-    implementation 'androidx.room:room-ktx:2.6.1'
-    implementation 'androidx.room:room-runtime:2.6.1'
-
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    ksp "androidx.room:room-compiler:$room_version"
 
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:33.3.0')
@@ -140,7 +141,6 @@ dependencies {
 
 configurations.configureEach {
     resolutionStrategy {
-        // Forzar versiones en caso de conflicto
         force 'org.jetbrains.kotlin:kotlin-stdlib:1.9.10'
         force "androidx.core:core-ktx:1.13.1"
         force "androidx.room:room-runtime:$room_version"
