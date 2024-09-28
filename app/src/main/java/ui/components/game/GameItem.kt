@@ -13,9 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color.Companion.Yellow
 import androidx.compose.ui.unit.dp
-import entidades.enums.ConverterDate
-import entidades.GameEntity
-import utilidades.convertDateTo
+import entity.enums.ConverterDate
+import entity.GameEntity
+import utils.convertDateTo
 
 @Composable
 fun GameItem(

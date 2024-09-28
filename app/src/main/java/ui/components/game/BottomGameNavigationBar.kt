@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import entidades.enums.BottomGameBarDestination
+import entity.enums.BottomGameBarDestination
 import interfaces.GameInterface
 import viewmodels.GameListViewModel
 

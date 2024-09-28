@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import com.example.fransoler.R
-import entidades.Game
+import entity.Game
 
 object ContextUtilities {
     fun shareGame(context: Context, game: Game) {

@@ -10,7 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.google.firebase.auth.FirebaseAuth
-import entidades.UserData
+import entity.UserData
 import interfaces.LoginInterface
 import ui.components.login.LoginForm
 import ui.theme.AppTheme

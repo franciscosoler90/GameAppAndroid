@@ -19,8 +19,8 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import interfaces.NavigationInterface
-import entidades.enums.BottomBarDestination
-import entidades.enums.BottomBarState
+import entity.enums.BottomBarDestination
+import entity.enums.BottomBarState
 import ui.components.game.GameItem
 import ui.components.navigation.BottomNavigationBar
 import viewmodels.GameSearchViewModel

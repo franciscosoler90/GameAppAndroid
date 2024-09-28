@@ -1,4 +1,4 @@
-package entidades
+package entity
 
 data class GameInfoScreenState(
     val game: Game? = null,

@@ -11,9 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.room.Room
 import com.google.firebase.auth.FirebaseAuth
 import common.Constant
-import entidades.GameEntity
-import entidades.Platform
-import entidades.enums.BottomBarState
+import entity.GameEntity
+import entity.Platform
+import entity.enums.BottomBarState
 import interfaces.NavigationInterface
 import sql.GameDatabase
 import ui.components.favorite.FavoriteView

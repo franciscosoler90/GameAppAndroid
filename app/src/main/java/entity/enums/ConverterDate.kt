@@ -1,4 +1,4 @@
-package entidades.enums
+package entity.enums
 
 enum class ConverterDate(val formatter: String) {
     FULL_DATE("dd MMMM yyyy"),

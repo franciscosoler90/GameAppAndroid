@@ -1,4 +1,4 @@
-package entidades
+package entity
 
 data class ScreenShot(
     val id: Int,

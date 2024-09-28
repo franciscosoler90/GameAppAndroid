@@ -1,4 +1,4 @@
-package entidades
+package entity
 
 data class UserData(
     var name: String = "",

@@ -6,8 +6,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import interfaces.NavigationInterface
 import interfaces.PlatformInterface
-import entidades.enums.BottomBarDestination
-import entidades.enums.BottomBarState
+import entity.enums.BottomBarDestination
+import entity.enums.BottomBarState
 import ui.components.navigation.BottomNavigationBar
 import viewmodels.PlatformListViewModel
 

@@ -1,6 +1,6 @@
-package utilidades
+package utils
 
-import entidades.enums.ConverterDate
+import entity.enums.ConverterDate
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

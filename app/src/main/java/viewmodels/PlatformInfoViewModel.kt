@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import api.API
-import entidades.Platform
+import entity.Platform
 
 class PlatformInfoViewModel: ViewModel() {
 

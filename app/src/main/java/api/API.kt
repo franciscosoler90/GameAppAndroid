@@ -2,12 +2,12 @@ package api
 
 import common.ApiConfig
 import common.Constant
-import entidades.Game
-import entidades.GameEntity
-import entidades.Platform
-import entidades.PlatformParent
-import entidades.RawgData
-import entidades.ScreenShot
+import entity.Game
+import entity.GameEntity
+import entity.Platform
+import entity.PlatformParent
+import entity.RawgData
+import entity.ScreenShot
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback

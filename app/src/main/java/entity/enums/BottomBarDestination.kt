@@ -1,4 +1,4 @@
-package entidades.enums
+package entity.enums
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons

@@ -26,7 +26,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.fransoler.R
-import entidades.UserData
+import entity.UserData
 import interfaces.LoginInterface
 
 @Composable

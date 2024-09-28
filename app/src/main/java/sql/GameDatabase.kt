@@ -3,7 +3,7 @@ package sql
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import entidades.GameEntity
+import entity.GameEntity
 
 
 @Database(entities = [GameEntity::class], version = 11)
