@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import entidades.enums.BottomGameBarDestination
 import interfaces.GameInterface
-import ui.components.search.searchBar
+import ui.components.search.SearchBar
 import viewmodels.GameListViewModel
 import viewmodels.PlatformInfoViewModel
 
@@ -41,11 +41,11 @@ fun GameList(
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
-            searchBar(gameInterface, platformViewModel.platform.name)
+            SearchBar(gameInterface, platformViewModel.platform.name)
         },
         bottomBar = {
             BottomGameNavigationBar(
-                items = BottomGameBarDestination.values().toList(),
+                items = BottomGameBarDestination.entries,
                 gameInterface = gameInterface,
                 gameListViewModel = gameListViewModel
             )

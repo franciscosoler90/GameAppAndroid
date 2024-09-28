@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package ui.components.game
 
 import androidx.compose.foundation.clickable
@@ -35,7 +31,7 @@ fun GameItem(
     ) {
 
         NetworkImage(
-            url = game.background_image,
+            url = game.backgroundImage,
             modifier = Modifier
                 .fillMaxHeight()
                 .width(85.dp)

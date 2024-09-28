@@ -49,7 +49,7 @@ class GameInfoViewModel(gameDatabase: GameDatabase) : ViewModel() {
             _uiState.update { it.copy(game = game) }
 
             //Si el valor description_raw está vacio, le pasamos el valor description formateado
-            cleanDescription = game.description_raw.ifEmpty {
+            cleanDescription = game.descriptionRaw.ifEmpty {
                 game.description.replace("<[^>]*>".toRegex(), "")
             }
 
@@ -80,7 +80,7 @@ class GameInfoViewModel(gameDatabase: GameDatabase) : ViewModel() {
 
     private suspend fun addFavorite(game: Game) {
         withContext(Dispatchers.IO) {
-            val gameEntity = GameEntity(game.id, game.name, game.background_image, game.released, game.rating, game.genres, userId)
+            val gameEntity = GameEntity(game.id, game.name, game.backgroundImage, game.released, game.rating, game.genres, userId)
             gameFavoriteDAO.insertAll(gameEntity)
             checkIfGameIsFavorite(game.id, userId)
         }
@@ -88,7 +88,7 @@ class GameInfoViewModel(gameDatabase: GameDatabase) : ViewModel() {
 
     private suspend fun deleteFavorite(game: Game) {
         withContext(Dispatchers.IO) {
-            val gameEntity = GameEntity(game.id, game.name, game.background_image, game.released, game.rating, game.genres, userId)
+            val gameEntity = GameEntity(game.id, game.name, game.backgroundImage, game.released, game.rating, game.genres, userId)
             gameFavoriteDAO.delete(gameEntity)
             checkIfGameIsFavorite(game.id, userId)
         }

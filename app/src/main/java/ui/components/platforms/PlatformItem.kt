@@ -38,7 +38,7 @@ fun PlatformItem(
     ) {
 
         NetworkImage(
-            url = platform.image_background,
+            url = platform.imageBackground,
             modifier = Modifier
                 .fillMaxHeight()
                 .width(85.dp)

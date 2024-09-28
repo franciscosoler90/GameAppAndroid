@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme

@@ -23,7 +23,7 @@ fun PlatformView(platformInterface: PlatformInterface, navigationInterface: Navi
         bottomBar = {
 
             BottomNavigationBar(
-                items = BottomBarDestination.values().toList(),
+                items = BottomBarDestination.entries,
                 current = BottomBarState.HOME,
                 navigationInterface = navigationInterface
             )

@@ -83,7 +83,7 @@ fun FavoriteView(
 
         bottomBar = {
             BottomNavigationBar(
-                items = BottomBarDestination.values().toList(),
+                items = BottomBarDestination.entries,
                 current = BottomBarState.FAVORITE,
                 navigationInterface = navigationInterface
             )

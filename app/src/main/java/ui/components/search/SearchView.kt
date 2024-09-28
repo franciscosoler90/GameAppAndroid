@@ -71,7 +71,7 @@ fun SearchView(navigationInterface: NavigationInterface) {
 
         bottomBar = {
             BottomNavigationBar(
-                items = BottomBarDestination.values().toList(),
+                items = BottomBarDestination.entries,
                 current = BottomBarState.SEARCH,
                 navigationInterface = navigationInterface
             )

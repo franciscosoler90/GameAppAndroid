@@ -36,7 +36,7 @@ fun GamePoster(
             .height(300.dp)
     ) {
         NetworkImage(
-            url = game.background_image,
+            url = game.backgroundImage,
             modifier = Modifier.fillMaxSize()
         )
         Box(
@@ -61,7 +61,6 @@ fun GamePoster(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = androidx.compose.material.ripple(bounded = false),
                         onClick = {
-                            //Volver atras
                             gameInterface.back()
                         }
                     )
@@ -76,7 +75,6 @@ fun GamePoster(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = androidx.compose.material.ripple(bounded = false),
                         onClick = {
-                            //Compartir
                             gameInterface.onShareGame(game)
 
                         }
