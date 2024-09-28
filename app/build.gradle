@@ -116,6 +116,7 @@ dependencies {
     implementation('com.google.firebase:firebase-analytics:22.1.0')
     implementation("com.google.firebase:firebase-auth")
 
+    implementation "io.github.cdimascio:dotenv-kotlin:6.3.1"
 
     androidTestImplementation platform('androidx.compose:compose-bom:2024.09.02')
     androidTestImplementation platform('androidx.compose:compose-bom:2024.09.02')

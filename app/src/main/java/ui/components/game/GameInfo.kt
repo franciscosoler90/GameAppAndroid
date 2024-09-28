@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package ui.components.game
 
 import androidx.compose.foundation.background
@@ -22,7 +18,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.FavoriteBorder
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -100,9 +95,8 @@ fun GameInfo(
                                 .padding(top = 4.dp)
                                 .clickable(
                                     interactionSource = remember { MutableInteractionSource() },
-                                    indication = rememberRipple(bounded = false),
+                                    indication = androidx.compose.material.ripple(bounded = false),
                                     onClick = {
-                                        //Favorito
                                         gameInfoViewModel.toggleFavorite()
                                         gameInterface.onToogleFavorite(!state.isFavoriteGame)
                                     }

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package ui.components.game
 
 import androidx.compose.foundation.background
@@ -19,7 +15,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Share
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -64,7 +59,7 @@ fun GamePoster(
                     .size(24.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false),
+                        indication = androidx.compose.material.ripple(bounded = false),
                         onClick = {
                             //Volver atras
                             gameInterface.back()
@@ -79,7 +74,7 @@ fun GamePoster(
                     .size(24.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false),
+                        indication = androidx.compose.material.ripple(bounded = false),
                         onClick = {
                             //Compartir
                             gameInterface.onShareGame(game)
