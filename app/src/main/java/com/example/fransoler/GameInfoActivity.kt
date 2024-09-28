@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package com.example.fransoler
 
 import android.content.Intent
@@ -59,24 +55,20 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
         }
     }
 
-    //Volver atrás
     override fun back(){
 
         when (destination) {
             0 -> {
-                // Lógica para manejar el caso de Home
                 val intent = Intent(baseContext,GameListActivity::class.java)
                 intent.putExtra(Constant.PLATFORM_ID, platformId)
                 intent.putExtra(Constant.PAGE, page)
                 startActivity(intent)
             }
             1 -> {
-                // Lógica para manejar el caso de Search
                 val intent = Intent(baseContext,SearchActivity::class.java)
                 startActivity(intent)
             }
             2 -> {
-                // Lógica para manejar el caso de Favorite
                 val intent = Intent(baseContext,FavoriteActivity::class.java)
                 startActivity(intent)
             }
@@ -97,13 +89,12 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
         //Nada
     }
 
-    //Compartir
     override fun onShareGame(game: Game) {
         ContextUtilities.shareGame(this, game)
     }
 
-    override fun onToogleFavorite(favorite: Boolean) {
-        ContextUtilities.onToogleFavorite(this, favorite)
+    override fun onToggleFavorite(favorite: Boolean) {
+        ContextUtilities.onToggleFavorite(this, favorite)
 
     }
 

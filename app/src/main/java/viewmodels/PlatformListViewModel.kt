@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package viewmodels
 
 import androidx.compose.runtime.mutableStateOf
@@ -21,7 +17,6 @@ class PlatformListViewModel: ViewModel() {
 
     private fun loadData() {
         API.loadPlatforms({ result ->
-            // Convierte la lista de PlatformParent a una lista de Platform utilizando flatMap
             platformList = result.result.flatMap { platformParent -> platformParent.platforms }
                           },
             { println("Error - PlatformListViewModel") })

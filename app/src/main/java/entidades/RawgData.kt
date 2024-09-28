@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package entidades
 
 import com.google.gson.annotations.SerializedName

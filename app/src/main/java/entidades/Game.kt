@@ -3,9 +3,6 @@ package entidades
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
-import com.google.common.reflect.TypeToken
-import com.google.gson.Gson
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -38,18 +35,3 @@ data class Game(
     @Json(name = "publishers") val publishers: List<Publisher>,
 )
 
-
-class GenreListConverter {
-    private val gson = Gson()
-
-    @TypeConverter
-    fun fromGenreList(genres: List<Genre>): String {
-        return gson.toJson(genres)
-    }
-
-    @TypeConverter
-    fun toGenreList(genreString: String): List<Genre> {
-        val type = object : TypeToken<List<Genre>>() {}.type
-        return gson.fromJson(genreString, type)
-    }
-}

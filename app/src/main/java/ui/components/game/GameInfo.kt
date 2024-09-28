@@ -98,7 +98,7 @@ fun GameInfo(
                                     indication = androidx.compose.material.ripple(bounded = false),
                                     onClick = {
                                         gameInfoViewModel.toggleFavorite()
-                                        gameInterface.onToogleFavorite(!state.isFavoriteGame)
+                                        gameInterface.onToggleFavorite(!state.isFavoriteGame)
                                     }
                                 )
                         )

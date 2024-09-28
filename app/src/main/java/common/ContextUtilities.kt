@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package common
 
 import android.content.Context
@@ -22,7 +18,7 @@ object ContextUtilities {
     }
 
 
-    fun onToogleFavorite(context: Context, favorite: Boolean) {
+    fun onToggleFavorite(context: Context, favorite: Boolean) {
         if(favorite){
             Toast.makeText(context,R.string.addFavorite, Toast.LENGTH_SHORT).show()
         }else{

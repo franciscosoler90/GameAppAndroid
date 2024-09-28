@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package viewmodels
 
 import androidx.compose.runtime.getValue
@@ -31,7 +27,6 @@ class GameInfoViewModel(gameDatabase: GameDatabase) : ViewModel() {
     var cleanDescription by mutableStateOf("")
     var listScreenshots by mutableStateOf<List<String>>(emptyList())
 
-    // Acceder al DAO
     private val gameFavoriteDAO: GameDAO = gameDatabase.gameDao()
 
     fun onInit(gameId: Long, newUserId: String) {
@@ -48,7 +43,6 @@ class GameInfoViewModel(gameDatabase: GameDatabase) : ViewModel() {
 
             _uiState.update { it.copy(game = game) }
 
-            //Si el valor description_raw está vacio, le pasamos el valor description formateado
             cleanDescription = game.descriptionRaw.ifEmpty {
                 game.description.replace("<[^>]*>".toRegex(), "")
             }

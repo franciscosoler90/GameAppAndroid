@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package com.example.fransoler
 
 import android.content.Intent
@@ -23,7 +19,7 @@ import viewmodels.PlatformListViewModel
 class MainActivity : AppCompatActivity(), PlatformInterface, NavigationInterface {
 
     private val platformListViewModel = PlatformListViewModel()
-    private val platformInterface = this@MainActivity // Accede a la instancia de la actividad
+    private val platformInterface = this@MainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,19 +38,10 @@ class MainActivity : AppCompatActivity(), PlatformInterface, NavigationInterface
         }
     }
 
-    //Método que se llama al clicar en una plataforma
     override fun onClickPlatform(platform: Platform) {
         val intent = Intent(this,GameListActivity::class.java)
         intent.putExtra(Constant.PLATFORM_ID, platform.id)
         startActivity(intent)
-    }
-
-    override fun onClickGame(game: GameEntity) {
-        //Nada
-    }
-
-    override fun homeRoute() {
-        //Nada
     }
 
     override fun searchRoute() {
@@ -65,6 +52,14 @@ class MainActivity : AppCompatActivity(), PlatformInterface, NavigationInterface
     override fun favoriteRoute() {
         val intent = Intent(this,FavoriteActivity::class.java)
         startActivity(intent)
+    }
+
+    override fun onClickGame(game: GameEntity) {
+        //Nada
+    }
+
+    override fun homeRoute() {
+        //Nada
     }
 
 }

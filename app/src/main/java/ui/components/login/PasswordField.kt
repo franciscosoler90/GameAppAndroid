@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package ui.components.login
 
 import androidx.compose.foundation.shape.RoundedCornerShape

@@ -1,14 +1,5 @@
-<!--
-  ~ Copyright (c) 2023. Francisco José Soler Conchello
-  -->
-
 <resources>
     <string name="app_name">GameNexus</string>
-
-    <string name="genres">Géneros</string>
-    <string name="platforms">Plataformas</string>
-    <string name="publishers">Distribuidores</string>
-    <string name="developers">Desarrolladores</string>
 
     <string name="addFavorite">Añadido a favoritos</string>
     <string name="deleteFavorite">Eliminado de favoritos</string>
@@ -16,8 +7,6 @@
     <string name="errorLogin">Error de inicio de sesión</string>
     <string name="errorUpdate">Error al actualizar el nombre de usuario</string>
     <string name="errorAuth">Autenticación fallida</string>
-
-    <string name="description">Descripción</string>
 
     <string name="home">Principal</string>
     <string name="search">Búsqueda</string>

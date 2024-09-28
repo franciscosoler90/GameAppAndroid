@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package viewmodels
 
 import androidx.compose.runtime.State
@@ -20,7 +16,6 @@ class GameFavoriteViewModel(gameDatabase: GameDatabase) : ViewModel() {
     private val _favoriteList = mutableStateOf<List<GameEntity>>(emptyList())
     val favoriteList: State<List<GameEntity>> = _favoriteList
 
-    // Acceder al DAO
     private val gameFavoriteDAO: GameDAO = gameDatabase.gameDao()
 
     fun onInit(userId: String) {
@@ -29,7 +24,6 @@ class GameFavoriteViewModel(gameDatabase: GameDatabase) : ViewModel() {
         }
     }
 
-    // Método para cargar los juegos favoritos desde la base de datos
     private fun loadFavoriteGames(userId: String) {
         viewModelScope.launch {
             val games = withContext(Dispatchers.IO) {

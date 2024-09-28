@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package com.example.fransoler
 
 import android.content.Intent
@@ -43,7 +39,6 @@ class GameListActivity : AppCompatActivity(), GameInterface {
         }
     }
 
-    //Método que se llama al clicar en un juego
     override fun onClickGame(game: GameEntity) {
         val intent = Intent(this,GameInfoActivity::class.java)
         intent.putExtra(Constant.DESTINATION, BottomBarState.HOME.ordinal)
@@ -57,7 +52,7 @@ class GameListActivity : AppCompatActivity(), GameInterface {
         //Nada
     }
 
-    override fun onToogleFavorite(favorite: Boolean) {
+    override fun onToggleFavorite(favorite: Boolean) {
         //Nada
     }
 

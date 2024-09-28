@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package ui.components.login
 
 import androidx.compose.foundation.Image
@@ -30,13 +26,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.fransoler.R
-import entidades.DatosUsuario
+import entidades.UserData
 import interfaces.LoginInterface
 
 @Composable
 fun LoginForm(loginCallbacks: LoginInterface) {
     Surface {
-        var datosUsuario by remember { mutableStateOf(DatosUsuario()) }
+        var userData by remember { mutableStateOf(UserData()) }
         val iconPainter = painterResource(id = R.drawable.ic_launcher_round)
 
         Column(
@@ -65,31 +61,31 @@ fun LoginForm(loginCallbacks: LoginInterface) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 EmailField(
-                    value = datosUsuario.email,
-                    onChange = { data -> datosUsuario = datosUsuario.copy(email = data) },
+                    value = userData.email,
+                    onChange = { data -> userData = userData.copy(email = data) },
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(10.dp))
                 PasswordField(
-                    value = datosUsuario.pwd,
-                    onChange = { data -> datosUsuario = datosUsuario.copy(pwd = data) },
+                    value = userData.pwd,
+                    onChange = { data -> userData = userData.copy(pwd = data) },
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(10.dp))
                 LabeledCheckbox(
                     label = "Recordar sesión",
                     onCheckChanged = {
-                        datosUsuario = datosUsuario.copy(remember = !datosUsuario.remember)
+                        userData = userData.copy(remember = !userData.remember)
                     },
-                    isChecked = datosUsuario.remember
+                    isChecked = userData.remember
                 )
             }
             Spacer(modifier = Modifier.height(20.dp))
             Button(
                 onClick = {
-                    loginCallbacks.signIn(datosUsuario)
+                    loginCallbacks.signIn(userData)
                 },
-                enabled = datosUsuario.isNotEmpty(),
+                enabled = userData.isNotEmpty(),
                 shape = RoundedCornerShape(8.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {

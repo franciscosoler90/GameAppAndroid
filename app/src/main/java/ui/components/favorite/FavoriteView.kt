@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package ui.components.favorite
 
 import androidx.compose.foundation.layout.Arrangement

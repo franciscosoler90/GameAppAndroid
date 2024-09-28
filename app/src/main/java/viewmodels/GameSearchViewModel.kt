@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package viewmodels
 
 import androidx.compose.runtime.getValue
@@ -14,7 +10,7 @@ import entidades.GameEntity
 class GameSearchViewModel : ViewModel() {
 
     var listGames by mutableStateOf<List<GameEntity>>(emptyList())
-    var onError: () -> Unit = {} // Manejo de error por defecto, se puede configurar desde fuera
+    var onError: () -> Unit = {}
 
     fun searchGames(query : String, searchPrecise : Boolean, searchExact : Boolean) {
         API.searchGames(
@@ -24,7 +20,7 @@ class GameSearchViewModel : ViewModel() {
             success = { game ->
             listGames = game.result
         }) {
-            onError() // Llama a la función de manejo de errores
+            onError()
         }
     }
 }

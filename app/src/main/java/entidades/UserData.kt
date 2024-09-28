@@ -1,10 +1,6 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package entidades
 
-data class DatosUsuario(
+data class UserData(
     var name: String = "",
     var email: String = "",
     var pwd: String = "",

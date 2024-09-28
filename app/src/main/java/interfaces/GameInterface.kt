@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package interfaces
 
 import entidades.Game
@@ -14,5 +10,5 @@ interface GameInterface {
     fun updatePrevious(gameListViewModel : GameListViewModel)
     fun onClickGame(game: GameEntity)
     fun onShareGame(game: Game)
-    fun onToogleFavorite(favorite: Boolean)
+    fun onToggleFavorite(favorite: Boolean)
 }

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package com.example.fransoler
 
 import android.content.Intent
@@ -14,7 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.google.firebase.auth.FirebaseAuth
-import entidades.DatosUsuario
+import entidades.UserData
 import interfaces.LoginInterface
 import ui.components.login.LoginForm
 import ui.theme.AppTheme
@@ -40,28 +36,18 @@ class LoginActivity : ComponentActivity(), LoginInterface {
         }
     }
 
-    //Método al hacer clic en el botón Entrar
-    override fun signIn(datosUsuario: DatosUsuario) {
+    override fun signIn(userData: UserData) {
 
-        auth.signInWithEmailAndPassword(datosUsuario.email, datosUsuario.pwd)
+        auth.signInWithEmailAndPassword(userData.email, userData.pwd)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Autenticación exitosa, redirige a MainActivity
+
                     val intent = Intent(baseContext, MainActivity::class.java)
                     startActivity(intent)
                 } else {
-                    // Autenticación fallida, muestra un Toast
                     Toast.makeText(baseContext, R.string.errorLogin, Toast.LENGTH_SHORT).show()
                 }
             }
-    }
-
-    override fun createAccount(datosUsuario: DatosUsuario) {
-        //No hace nada
-    }
-
-    override fun updateName(datosUsuario: DatosUsuario) {
-        //No hace nada
     }
 
     override fun registerActivity() {
@@ -69,7 +55,15 @@ class LoginActivity : ComponentActivity(), LoginInterface {
         startActivity(intent)
     }
 
+    override fun createAccount(userData: UserData) {
+        //Nada
+    }
+
+    override fun updateName(userData: UserData) {
+        //Nada
+    }
+
     override fun loginActivity() {
-        //No hace nada
+        //Nada
     }
 }

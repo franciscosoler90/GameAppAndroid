@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package com.example.fransoler
 
 import android.content.Intent
@@ -15,7 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
-import entidades.DatosUsuario
+import entidades.UserData
 import interfaces.LoginInterface
 import ui.components.login.RegisterForm
 import ui.theme.AppTheme
@@ -46,31 +42,27 @@ class RegisterActivity : ComponentActivity(), LoginInterface {
         startActivity(intent)
     }
 
-    override fun createAccount(datosUsuario: DatosUsuario) {
-        auth.createUserWithEmailAndPassword(datosUsuario.email, datosUsuario.pwd)
+    override fun createAccount(userData: UserData) {
+        auth.createUserWithEmailAndPassword(userData.email, userData.pwd)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    updateName(datosUsuario)
+                    updateName(userData)
                 } else {
                     Toast.makeText(baseContext, R.string.errorAuth, Toast.LENGTH_SHORT).show()
                 }
             }
     }
 
-    override fun updateName(datosUsuario: DatosUsuario) {
+    override fun updateName(userData: UserData) {
         val user = auth.currentUser
-        val profileUpdates = UserProfileChangeRequest.Builder().setDisplayName(datosUsuario.name).build()
+        val profileUpdates = UserProfileChangeRequest.Builder().setDisplayName(userData.name).build()
 
         user?.updateProfile(profileUpdates)
             ?.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // El nombre de usuario se ha actualizado exitosamente
-                    // Autenticación exitosa, redirige a MainActivity
                     val intent = Intent(baseContext, MainActivity::class.java)
                     startActivity(intent)
                 } else {
-                    // Hubo un error al actualizar el nombre de usuario
-                    // Autenticación fallida, muestra un Toast
                     Toast.makeText(baseContext, R.string.errorUpdate, Toast.LENGTH_SHORT).show()
                 }
             }
@@ -78,11 +70,11 @@ class RegisterActivity : ComponentActivity(), LoginInterface {
     }
 
     override fun registerActivity() {
-        //No hace nada
+        //Nada
     }
 
-    override fun signIn(datosUsuario: DatosUsuario) {
-        //No hace nada
+    override fun signIn(userData: UserData) {
+        //Nada
     }
 
 }

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package ui.components.game
 
 import androidx.compose.foundation.layout.Arrangement
@@ -33,7 +29,6 @@ fun GameList(
     val gameListViewModel = GameListViewModel(platformId,currentPage)
     val platformViewModel = viewModel<PlatformInfoViewModel>()
 
-    // Cargar los juegos favoritos al inicio
     LaunchedEffect(Unit) {
         platformViewModel.onInit(platformId)
     }

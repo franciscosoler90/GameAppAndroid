@@ -1,17 +1,13 @@
-/*
- * Copyright (c) 2023. Francisco José Soler Conchello
- */
-
 package interfaces
 
-import entidades.DatosUsuario
+import entidades.UserData
 
 interface LoginInterface {
-    fun signIn(datosUsuario: DatosUsuario)
+    fun signIn(userData: UserData)
 
-    fun createAccount(datosUsuario: DatosUsuario)
+    fun createAccount(userData: UserData)
 
-    fun updateName(datosUsuario: DatosUsuario)
+    fun updateName(userData: UserData)
 
     fun registerActivity()
 
