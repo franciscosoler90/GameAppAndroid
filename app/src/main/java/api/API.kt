@@ -4,6 +4,7 @@
 
 package api
 
+import common.ApiConfig
 import common.Constant
 import entidades.Game
 import entidades.GameEntity
@@ -85,7 +86,7 @@ object API {
 
     fun loadPlatforms(success: (platformList: RawgData<List<PlatformParent>>  ) -> Unit, failure: () -> Unit) {
 
-        getRetroFit().getPlatforms("name",Constant.API_KEY).enqueue(object: Callback<RawgData<List<PlatformParent>>> {
+        getRetroFit().getPlatforms("name",ApiConfig.API_KEY).enqueue(object: Callback<RawgData<List<PlatformParent>>> {
             override fun onResponse(call: Call<RawgData<List<PlatformParent>>>, response: Response<RawgData<List<PlatformParent>>>) {
                 if(response.isSuccessful){
                     println(response)
@@ -109,7 +110,7 @@ object API {
             return
         }
 
-        getRetroFit().getPlatform(platformId, Constant.API_KEY).enqueue(object: Callback<Platform> {
+        getRetroFit().getPlatform(platformId, ApiConfig.API_KEY).enqueue(object: Callback<Platform> {
             override fun onResponse(call: Call<Platform>, response: Response<Platform>) {
                 if(response.isSuccessful){
                     println(response)
@@ -133,7 +134,7 @@ object API {
             return
         }
 
-        getRetroFit().getGames(Constant.API_KEY, platformId, page,"name").enqueue(object: Callback<RawgData<List<GameEntity>>> {
+        getRetroFit().getGames(ApiConfig.API_KEY, platformId, page,"name").enqueue(object: Callback<RawgData<List<GameEntity>>> {
             override fun onResponse(call: Call<RawgData<List<GameEntity>>>, response: Response<RawgData<List<GameEntity>>>) {
                 if(response.isSuccessful){
                     println(response)
@@ -157,7 +158,7 @@ object API {
             return
         }
 
-        getRetroFit().searchGames(Constant.API_KEY, query,searchPrecise,searchExact).enqueue(object: Callback<RawgData<List<GameEntity>>> {
+        getRetroFit().searchGames(ApiConfig.API_KEY, query,searchPrecise,searchExact).enqueue(object: Callback<RawgData<List<GameEntity>>> {
             override fun onResponse(call: Call<RawgData<List<GameEntity>>>, response: Response<RawgData<List<GameEntity>>>) {
                 if(response.isSuccessful){
                     println(response)
@@ -180,7 +181,7 @@ object API {
             return
         }
 
-        getRetroFit().getGameDetails(gameId, Constant.API_KEY).enqueue(object: Callback<Game> {
+        getRetroFit().getGameDetails(gameId, ApiConfig.API_KEY).enqueue(object: Callback<Game> {
             override fun onResponse(call: Call<Game>, response: Response<Game>) {
                 if(response.isSuccessful){
                     println(response)
@@ -204,7 +205,7 @@ object API {
             return
         }
 
-        getRetroFit().getGameScreenshots(gameId, Constant.API_KEY).enqueue(object: Callback<RawgData<List<ScreenShot>>> {
+        getRetroFit().getGameScreenshots(gameId, ApiConfig.API_KEY).enqueue(object: Callback<RawgData<List<ScreenShot>>> {
             override fun onResponse(call: Call<RawgData<List<ScreenShot>>>, response: Response<RawgData<List<ScreenShot>>>) {
                 if(response.isSuccessful){
                     println(response)
