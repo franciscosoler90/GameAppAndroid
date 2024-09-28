@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import common.Constant
-import entidades.GameEntity
-import entidades.Platform
+import entity.GameEntity
+import entity.Platform
 import interfaces.NavigationInterface
 import interfaces.PlatformInterface
 import ui.components.platforms.PlatformView

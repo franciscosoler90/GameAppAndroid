@@ -11,7 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
-import entidades.UserData
+import entity.UserData
 import interfaces.LoginInterface
 import ui.components.login.RegisterForm
 import ui.theme.AppTheme

@@ -1,6 +1,6 @@
 package interfaces
 
-import entidades.UserData
+import entity.UserData
 
 interface LoginInterface {
     fun signIn(userData: UserData)

@@ -1,6 +1,6 @@
 package interfaces
 
-import entidades.Platform
+import entity.Platform
 
 interface PlatformInterface {
     fun onClickPlatform(platform: Platform)

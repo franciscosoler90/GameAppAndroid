@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import entidades.GameEntity
+import entity.GameEntity
 
 @Dao
 interface GameDAO {

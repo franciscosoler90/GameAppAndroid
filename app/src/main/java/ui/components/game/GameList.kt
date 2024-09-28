@@ -14,7 +14,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import entidades.enums.BottomGameBarDestination
+import entity.enums.BottomGameBarDestination
 import interfaces.GameInterface
 import ui.components.search.SearchBar
 import viewmodels.GameListViewModel

@@ -1,7 +1,7 @@
 package interfaces
 
-import entidades.GameEntity
-import entidades.Platform
+import entity.GameEntity
+import entity.Platform
 
 interface NavigationInterface {
     fun homeRoute()

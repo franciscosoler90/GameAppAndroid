@@ -11,8 +11,8 @@ import androidx.room.Room
 import com.google.firebase.auth.FirebaseAuth
 import common.Constant
 import common.ContextUtilities
-import entidades.Game
-import entidades.GameEntity
+import entity.Game
+import entity.GameEntity
 import interfaces.GameInterface
 import sql.GameDatabase
 import ui.components.game.GameInfo

@@ -1,7 +1,7 @@
 package interfaces
 
-import entidades.Game
-import entidades.GameEntity
+import entity.Game
+import entity.GameEntity
 import viewmodels.GameListViewModel
 
 interface GameInterface {

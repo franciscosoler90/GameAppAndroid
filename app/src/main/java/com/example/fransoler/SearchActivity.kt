@@ -9,9 +9,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import common.Constant
-import entidades.GameEntity
-import entidades.Platform
-import entidades.enums.BottomBarState
+import entity.GameEntity
+import entity.Platform
+import entity.enums.BottomBarState
 import interfaces.NavigationInterface
 import ui.components.search.SearchView
 import ui.theme.AppTheme

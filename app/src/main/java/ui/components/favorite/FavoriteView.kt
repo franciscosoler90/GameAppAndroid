@@ -26,8 +26,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.google.firebase.auth.FirebaseUser
 import interfaces.NavigationInterface
-import entidades.enums.BottomBarDestination
-import entidades.enums.BottomBarState
+import entity.enums.BottomBarDestination
+import entity.enums.BottomBarState
 import ui.components.game.GameItem
 import ui.components.navigation.BottomNavigationBar
 import viewmodels.GameFavoriteViewModel

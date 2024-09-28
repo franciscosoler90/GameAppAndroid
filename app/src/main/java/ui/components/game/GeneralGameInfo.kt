@@ -17,9 +17,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import entidades.enums.ConverterDate
-import entidades.Game
-import utilidades.convertDateTo
+import entity.enums.ConverterDate
+import entity.Game
+import utils.convertDateTo
 
 @Composable
 fun GeneralGameInfo(

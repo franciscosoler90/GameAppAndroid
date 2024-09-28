@@ -8,9 +8,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import common.Constant
-import entidades.Game
-import entidades.GameEntity
-import entidades.enums.BottomBarState
+import entity.Game
+import entity.GameEntity
+import entity.enums.BottomBarState
 import interfaces.GameInterface
 import ui.components.game.GameList
 import ui.theme.AppTheme

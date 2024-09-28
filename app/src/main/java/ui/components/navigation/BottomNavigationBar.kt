@@ -13,8 +13,8 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import interfaces.NavigationInterface
-import entidades.enums.BottomBarDestination
-import entidades.enums.BottomBarState
+import entity.enums.BottomBarDestination
+import entity.enums.BottomBarState
 
 @Composable
 fun BottomNavigationBar(

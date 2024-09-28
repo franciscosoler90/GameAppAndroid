@@ -6,9 +6,9 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import api.API
-import entidades.Game
-import entidades.GameEntity
-import entidades.GameInfoScreenState
+import entity.Game
+import entity.GameEntity
+import entity.GameInfoScreenState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
