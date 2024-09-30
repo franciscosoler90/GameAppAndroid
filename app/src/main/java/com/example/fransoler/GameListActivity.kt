@@ -24,13 +24,13 @@ class GameListActivity : AppCompatActivity(), GameInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        platformId = intent.getIntExtra(Constant.PLATFORM_ID,0)
-        currentPage = intent.getIntExtra(Constant.PAGE,1)
+        platformId = intent.getIntExtra(Constant.PLATFORM_ID, 0)
+        currentPage = intent.getIntExtra(Constant.PAGE, 1)
 
         setContent {
             AppTheme {
                 Surface(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     GameList(this@GameListActivity, platformId, currentPage)
@@ -40,7 +40,7 @@ class GameListActivity : AppCompatActivity(), GameInterface {
     }
 
     override fun onClickGame(game: GameEntity) {
-        val intent = Intent(this,GameInfoActivity::class.java)
+        val intent = Intent(this, GameInfoActivity::class.java)
         intent.putExtra(Constant.DESTINATION, BottomBarState.HOME.ordinal)
         intent.putExtra(Constant.GAME_ID, game.id)
         intent.putExtra(Constant.PLATFORM_ID, platformId)
@@ -49,11 +49,11 @@ class GameListActivity : AppCompatActivity(), GameInterface {
     }
 
     override fun onShareGame(game: Game) {
-        //Nada
+        // Nada
     }
 
     override fun onToggleFavorite(favorite: Boolean) {
-        //Nada
+        // Nada
     }
 
     override fun back() {
@@ -62,17 +62,16 @@ class GameListActivity : AppCompatActivity(), GameInterface {
     }
 
     override fun updateForward(gameListViewModel: GameListViewModel) {
-        if(gameListViewModel.next != null){
+        gameListViewModel.next?.let {
             currentPage++
             gameListViewModel.updatePage(currentPage)
         }
     }
 
     override fun updatePrevious(gameListViewModel: GameListViewModel) {
-        if(currentPage > 1){
+        if (currentPage > 1) {
             currentPage--
             gameListViewModel.updatePage(currentPage)
         }
     }
-    
 }

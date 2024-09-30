@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.room.Room
 import com.google.firebase.auth.FirebaseAuth
 import common.Constant
-import common.ContextUtilities
+import utils.ContextUtilities
 import entity.Game
 import entity.GameEntity
 import interfaces.GameInterface
@@ -35,7 +35,7 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
         val gameDatabase = try {
             DatabaseProvider.getDatabase(this)
         } catch (e: Exception) {
-            println("Error creando la base de datos")
+            println(R.string.errorDatabase)
             finish()
             return
         }
@@ -48,7 +48,7 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
 
         val gameId = intent.getLongExtra(Constant.GAME_ID, -1)
         if (gameId == -1L) {
-            finish()
+            showErrorAndExit()
             return
         }
 
@@ -58,7 +58,7 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
         setContent {
             AppTheme {
                 Surface(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     GameInfo(userId, gameId, gameInfoViewModel, this@GameInfoActivity)
@@ -67,38 +67,34 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
         }
     }
 
-    override fun back(){
+    private fun showErrorAndExit() {
+        ContextUtilities.showToast(this, R.string.favorites, 1)
+        finish()
+    }
 
-        when (destination) {
-            0 -> {
-                val intent = Intent(baseContext,GameListActivity::class.java)
-                intent.putExtra(Constant.PLATFORM_ID, platformId)
-                intent.putExtra(Constant.PAGE, page)
-                startActivity(intent)
+    override fun back() {
+        val intent = when (destination) {
+            0 -> Intent(baseContext, GameListActivity::class.java).apply {
+                putExtra(Constant.PLATFORM_ID, platformId)
+                putExtra(Constant.PAGE, page)
             }
-            1 -> {
-                val intent = Intent(baseContext,SearchActivity::class.java)
-                startActivity(intent)
-            }
-            2 -> {
-                val intent = Intent(baseContext,FavoriteActivity::class.java)
-                startActivity(intent)
-            }
-
+            1 -> Intent(baseContext, SearchActivity::class.java)
+            2 -> Intent(baseContext, FavoriteActivity::class.java)
+            else -> return
         }
-
+        startActivity(intent)
     }
 
     override fun updateForward(gameListViewModel: GameListViewModel) {
-        //Nada
+        // Nada
     }
 
     override fun updatePrevious(gameListViewModel: GameListViewModel) {
-        //Nada
+        // Nada
     }
 
     override fun onClickGame(game: GameEntity) {
-        //Nada
+        // Nada
     }
 
     override fun onShareGame(game: Game) {
@@ -106,10 +102,12 @@ class GameInfoActivity : AppCompatActivity(), GameInterface {
     }
 
     override fun onToggleFavorite(favorite: Boolean) {
-        ContextUtilities.onToggleFavorite(this, favorite)
-
+        if(favorite){
+            ContextUtilities.showToast(this, R.string.addFavorite, 1)
+        }else{
+            ContextUtilities.showToast(this, R.string.deleteFavorite, 1)
+        }
     }
-
 }
 
 object DatabaseProvider {

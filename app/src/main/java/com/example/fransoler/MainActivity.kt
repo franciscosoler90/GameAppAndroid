@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
@@ -18,7 +19,7 @@ import viewmodels.PlatformListViewModel
 
 class MainActivity : AppCompatActivity(), PlatformInterface, NavigationInterface {
 
-    private val platformListViewModel = PlatformListViewModel()
+    private val platformListViewModel: PlatformListViewModel by viewModels()
     private val platformInterface = this@MainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,18 +40,18 @@ class MainActivity : AppCompatActivity(), PlatformInterface, NavigationInterface
     }
 
     override fun onClickPlatform(platform: Platform) {
-        val intent = Intent(this,GameListActivity::class.java)
+        val intent = Intent(this, GameListActivity::class.java)
         intent.putExtra(Constant.PLATFORM_ID, platform.id)
         startActivity(intent)
     }
 
     override fun searchRoute() {
-        val intent = Intent(this,SearchActivity::class.java)
+        val intent = Intent(this, SearchActivity::class.java)
         startActivity(intent)
     }
 
     override fun favoriteRoute() {
-        val intent = Intent(this,FavoriteActivity::class.java)
+        val intent = Intent(this, FavoriteActivity::class.java)
         startActivity(intent)
     }
 

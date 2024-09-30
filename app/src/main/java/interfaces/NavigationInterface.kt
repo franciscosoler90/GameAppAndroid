@@ -7,7 +7,6 @@ interface NavigationInterface {
     fun homeRoute()
     fun searchRoute()
     fun favoriteRoute()
-
     fun onClickPlatform(platform: Platform)
     fun onClickGame(game: GameEntity)
 }
