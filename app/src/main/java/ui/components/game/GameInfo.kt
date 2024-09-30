@@ -25,12 +25,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.fransoler.R
 import interfaces.GameInterface
 import viewmodels.GameInfoViewModel
 
@@ -111,24 +115,26 @@ fun GameInfo(
                     Spacer(modifier = Modifier.height(24.dp))
 
                     Text(
-                        text = "Descripción",
+                        text = stringResource(id = R.string.game_description_title),
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.primary
                     )
 
-                    Spacer(modifier = Modifier.height(8.dp))
+                    var isExpanded by remember { mutableStateOf(false) }
 
                     Text(
                         text = gameInfoViewModel.cleanDescription,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onBackground,
+                        maxLines = if (isExpanded) Int.MAX_VALUE else 3,
+                        modifier = Modifier.clickable { isExpanded = !isExpanded }
                     )
 
                     if(gameInfoViewModel.listScreenshots.isNotEmpty()){
                         Spacer(modifier = Modifier.height(24.dp))
 
                         Text(
-                            text = "Imágenes",
+                            text = stringResource(id = R.string.game_images_title),
                             style = MaterialTheme.typography.titleMedium,
                             color = MaterialTheme.colorScheme.primary
                         )

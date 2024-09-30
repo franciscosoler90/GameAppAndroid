@@ -1,7 +1,3 @@
-<!--
-  ~ Copyright (c) 2023. Francisco José Soler Conchello
-  -->
-
 <resources>
     <!-- Base application theme. -->
     <style name="Theme.FranSoler" parent="Theme.MaterialComponents.DayNight.NoActionBar">

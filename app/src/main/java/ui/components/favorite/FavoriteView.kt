@@ -22,8 +22,10 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.example.fransoler.R
 import com.google.firebase.auth.FirebaseUser
 import interfaces.NavigationInterface
 import entity.enums.BottomBarDestination
@@ -57,9 +59,9 @@ fun FavoriteView(
                     titleContentColor = MaterialTheme.colorScheme.primary,
                 ),
                 title = {
-                    if (currentUser != null) {
+                    currentUser?.displayName?.let { displayName ->
                         Text(
-                            "Favoritos de " + currentUser.displayName,
+                            text = stringResource(id = R.string.favorites_title, displayName),
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis
                         )

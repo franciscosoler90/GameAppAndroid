@@ -23,6 +23,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.fransoler.R
@@ -31,7 +32,7 @@ import interfaces.LoginInterface
 
 @Composable
 fun LoginForm(loginCallbacks: LoginInterface) {
-    Surface {
+    Surface(color = MaterialTheme.colorScheme.background) {
         var userData by remember { mutableStateOf(UserData()) }
         val iconPainter = painterResource(id = R.drawable.ic_launcher_round)
 
@@ -44,11 +45,11 @@ fun LoginForm(loginCallbacks: LoginInterface) {
         ) {
             Image(
                 painter = iconPainter,
-                contentDescription = null,
+                contentDescription = stringResource(id = R.string.app_name),
                 modifier = Modifier.size(144.dp)
             )
             Text(
-                text = "Iniciar sesión en GameNexus",
+                text = stringResource(id = R.string.login_title),
                 style = MaterialTheme.typography.titleLarge,
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.primary
@@ -73,7 +74,7 @@ fun LoginForm(loginCallbacks: LoginInterface) {
                 )
                 Spacer(modifier = Modifier.height(10.dp))
                 LabeledCheckbox(
-                    label = "Recordar sesión",
+                    label = stringResource(id = R.string.remember_session_label),
                     onCheckChanged = {
                         userData = userData.copy(remember = !userData.remember)
                     },
@@ -89,11 +90,11 @@ fun LoginForm(loginCallbacks: LoginInterface) {
                 shape = RoundedCornerShape(8.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Entrar")
+                Text(text = stringResource(id = R.string.button_text))
             }
             Spacer(modifier = Modifier.height(10.dp))
             Text(
-                text = "¿No tienes una cuenta? Regístrate",
+                text = stringResource(id = R.string.register_text),
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.primary,
@@ -104,7 +105,7 @@ fun LoginForm(loginCallbacks: LoginInterface) {
 
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Desarrollado por Francisco José Soler Conchello",
+                text = stringResource(id = R.string.developed_by_text),
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.secondary,

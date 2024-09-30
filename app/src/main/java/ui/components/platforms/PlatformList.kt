@@ -31,9 +31,9 @@ fun PlatformList(platformInterface: PlatformInterface, platformListViewModel: Pl
                 .weight(1f),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            items(platformListViewModel.platformList.sortedBy { it.name }) { plataforma ->
-                PlatformItem(platform = plataforma) {
-                    platformInterface.onClickPlatform(plataforma)
+            items(platformListViewModel.platformList.sortedBy { it.name }) { platform ->
+                PlatformItem(platform = platform) {
+                    platformInterface.onClickPlatform(platform)
                 }
             }
         }

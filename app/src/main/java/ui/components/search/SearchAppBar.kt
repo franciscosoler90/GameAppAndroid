@@ -16,6 +16,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.stringResource
+import com.example.fransoler.R as AppR
 
 @Composable
 fun SearchAppBar(
@@ -32,17 +34,16 @@ fun SearchAppBar(
         color = MaterialTheme.colorScheme.background
     ) {
 
-        TextField(modifier = Modifier
-            .fillMaxWidth(),
+        TextField(
+            modifier = Modifier.fillMaxWidth(),
             value = text,
             onValueChange = {
                 onTextChange(it)
             },
             placeholder = {
                 Text(
-                    modifier = Modifier
-                        .alpha(0.5f),
-                    text = "Buscar juegos...",
+                    modifier = Modifier.alpha(0.5f),
+                    text = stringResource(id = AppR.string.search_placeholder),
                     color = Color.White
                 )
             },
@@ -52,8 +53,7 @@ fun SearchAppBar(
             singleLine = true,
             leadingIcon = {
                 IconButton(
-                    modifier = Modifier
-                        .alpha(0.5f),
+                    modifier = Modifier.alpha(0.5f),
                     onClick = {}
                 ) {
                     Icon(
@@ -92,24 +92,21 @@ fun SearchAppBar(
             colors = TextFieldDefaults.colors(
                 unfocusedContainerColor = MaterialTheme.colorScheme.background,
                 focusedContainerColor = MaterialTheme.colorScheme.background,
-                cursorColor = MaterialTheme.colorScheme.primary, // Cambia el color del cursor
-                focusedIndicatorColor = MaterialTheme.colorScheme.primary, // Cambia el color del indicador de foco
-                unfocusedIndicatorColor = MaterialTheme.colorScheme.secondary // Cambia el color del indicador fuera de foco
+                cursorColor = MaterialTheme.colorScheme.primary,
+                focusedIndicatorColor = MaterialTheme.colorScheme.primary,
+                unfocusedIndicatorColor = MaterialTheme.colorScheme.secondary
             )
         )
     }
 }
 
-
-
 @Composable
 @Preview
 fun SearchAppBarPreview() {
     SearchAppBar(
-        text = "Buscar juegos...",
+        text = stringResource(id = AppR.string.search_placeholder),
         onTextChange = {},
         onCloseClicked = {},
         onSearchClicked = {}
     )
 }
-

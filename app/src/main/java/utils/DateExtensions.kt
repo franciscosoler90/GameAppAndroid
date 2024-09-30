@@ -6,18 +6,18 @@ import java.util.Date
 import java.util.Locale
 
 fun String.convertDateTo(
-    formatoDeseado: ConverterDate,
-    formatoOriginal: ConverterDate = ConverterDate.SQL_DATE
+    desiredFormat: ConverterDate,
+    originalFormat: ConverterDate = ConverterDate.SQL_DATE
 ): String? {
     return if (this.isNotEmpty()) {
 
         return try {
-            val formatoFechaOriginal = SimpleDateFormat(formatoOriginal.formatter, Locale.getDefault())
-            val fecha = formatoFechaOriginal.parse(this) ?: Date()
+            val originalDateFormat = SimpleDateFormat(originalFormat.formatter, Locale.getDefault())
+            val date = originalDateFormat.parse(this) ?: Date()
 
-            val formatoFechaDeseado = SimpleDateFormat(formatoDeseado.formatter, Locale("es", "ES"))
-            formatoFechaDeseado.format(fecha)
-        }catch (e : Exception){
+            val desiredDateFormat = SimpleDateFormat(desiredFormat.formatter, Locale("es", "ES"))
+            desiredDateFormat.format(date)
+        } catch (e: Exception) {
             null
         }
 

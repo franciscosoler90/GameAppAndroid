@@ -15,16 +15,43 @@
     <string name="back">Atrás</string>
     <string name="forward">Adelante</string>
 
+    <string name="game_description_title">Descripción</string>
+    <string name="game_images_title">Imágenes</string>
+    <string name="metascore_title">Metascore</string>
+    <string name="rating_title">Puntuación</string>
+    <string name="release_date_title">Fecha de lanzamiento</string>
+    <string name="genres_title">Géneros</string>
+    <string name="platforms_title">Plataformas</string>
+
+    <string name="favorites_title">Favoritos de %1$s</string>
+
+
     <!-- Login related messages -->
     <string name="errorFieldsEmpty">Error: Email and Password cannot be empty.</string>
     <string name="errorInvalidCredentials">Error: Invalid credentials.</string>
     <string name="errorUserNotFound">Error: User not found.</string>
-    <string name="login_successful">Login successful!</string>
+
 
     <!-- Share game -->
-    <string name="shareGameSubject">Juego compartido.</string>
     <string name="errorSharing">Error al compartir el juego.</string>
 
     <string name="errorDatabase">Error creando la base de datos.</string>
+
+    <string name="login_title">Iniciar sesión en GameNexus</string>
+    <string name="register_text">¿No tienes una cuenta? Regístrate</string>
+    <string name="developed_by_text">Desarrollado por Francisco José Soler Conchello</string>
+    <string name="remember_session_label">Recordar sesión</string>
+    <string name="button_text">Entrar</string>
+
+    <string name="name">Nombre</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Correo electrónico</string>
+
+    <string name="register_title">Registrarte</string>
+    <string name="have_account_question">¿Ya tienes una cuenta?</string>
+
+    <string name="search_placeholder">Buscar juegos…</string>
+
+    <string name="search_placeholder_platform">Buscar en %1$s</string>
 
 </resources>
