@@ -14,4 +14,17 @@
 
     <string name="back">Atrás</string>
     <string name="forward">Adelante</string>
+
+    <!-- Login related messages -->
+    <string name="errorFieldsEmpty">Error: Email and Password cannot be empty.</string>
+    <string name="errorInvalidCredentials">Error: Invalid credentials.</string>
+    <string name="errorUserNotFound">Error: User not found.</string>
+    <string name="login_successful">Login successful!</string>
+
+    <!-- Share game -->
+    <string name="shareGameSubject">Juego compartido.</string>
+    <string name="errorSharing">Error al compartir el juego.</string>
+
+    <string name="errorDatabase">Error creando la base de datos.</string>
+
 </resources>
