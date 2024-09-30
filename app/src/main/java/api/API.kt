@@ -80,113 +80,155 @@ object API {
         return OkHttpClient.Builder().addInterceptor(HeaderInterceptor()).build()
     }
 
-    fun loadPlatforms(success: (platformList: RawgData<List<PlatformParent>>  ) -> Unit, failure: () -> Unit) {
+    fun loadPlatforms(
+        success: (platformList: RawgData<List<PlatformParent>>) -> Unit,
+        failure: () -> Unit
+    ) {
 
-        getRetroFit().getPlatforms("name",ApiConfig.API_KEY).enqueue(object: Callback<RawgData<List<PlatformParent>>> {
-            override fun onResponse(call: Call<RawgData<List<PlatformParent>>>, response: Response<RawgData<List<PlatformParent>>>) {
-                if(response.isSuccessful){
-                    println(response)
-                    success((response.body()!!))
-                }else{
-                    println(response.errorBody())
-                    println("ERROR - loadPlatforms")
+        getRetroFit().getPlatforms("name", ApiConfig.API_KEY)
+            .enqueue(object : Callback<RawgData<List<PlatformParent>>> {
+                override fun onResponse(
+                    call: Call<RawgData<List<PlatformParent>>>,
+                    response: Response<RawgData<List<PlatformParent>>>
+                ) {
+                    if (response.isSuccessful) {
+                        println(response)
+                        response.body()?.let { success(it) } ?: failure() // Handle null case
+                    } else {
+                        println(response.errorBody())
+                        println("ERROR - loadPlatforms")
+                        failure() // Call failure callback on error response
+                    }
                 }
-            }
-            override fun onFailure(call: Call<RawgData<List<PlatformParent>>>, t: Throwable) {
-                println(t.message)
-                failure()
-            }
-        })
+
+                override fun onFailure(call: Call<RawgData<List<PlatformParent>>>, t: Throwable) {
+                    println(t.message)
+                    failure()
+                }
+            })
     }
 
+    fun loadGamesPlatform(
+        platformId: Int,
+        success: (platform: Platform) -> Unit,
+        failure: () -> Unit
+    ) {
 
-    fun loadGamesPlatform(platformId : Int, success: (platform: Platform) -> Unit, failure: () -> Unit) {
-
-        if(platformId <= 0){
+        if (platformId <= 0) {
             return
         }
 
-        getRetroFit().getPlatform(platformId, ApiConfig.API_KEY).enqueue(object: Callback<Platform> {
-            override fun onResponse(call: Call<Platform>, response: Response<Platform>) {
-                if(response.isSuccessful){
-                    println(response)
-                    success((response.body()!!))
-                }else{
-                    println(response.errorBody())
-                    println("ERROR - loadGamesPlatform")
+        getRetroFit().getPlatform(platformId, ApiConfig.API_KEY)
+            .enqueue(object : Callback<Platform> {
+                override fun onResponse(call: Call<Platform>, response: Response<Platform>) {
+                    if (response.isSuccessful) {
+                        println(response)
+                        response.body()?.let { success(it) } ?: failure() // Handle null case
+                    } else {
+                        println(response.errorBody())
+                        println("ERROR - loadGamesPlatform")
+                        failure() // Call failure callback on error response
+                    }
                 }
-            }
-            override fun onFailure(call: Call<Platform>, t: Throwable) {
-                println(t.message)
-                failure()
-            }
-        })
+
+                override fun onFailure(call: Call<Platform>, t: Throwable) {
+                    println(t.message)
+                    failure()
+                }
+            })
     }
 
-
-    fun loadGames(platformId : Int, page: Int, success: (listGames: RawgData<List<GameEntity>>) -> Unit, failure: () -> Unit) {
-
-        if(platformId <= 0 || page <= 0){
+    fun loadGames(
+        platformId: Int,
+        page: Int,
+        success: (listGames: RawgData<List<GameEntity>>) -> Unit,
+        failure: () -> Unit
+    ) {
+        if (platformId <= 0 || page <= 0) {
             return
         }
 
-        getRetroFit().getGames(ApiConfig.API_KEY, platformId, page,"name").enqueue(object: Callback<RawgData<List<GameEntity>>> {
-            override fun onResponse(call: Call<RawgData<List<GameEntity>>>, response: Response<RawgData<List<GameEntity>>>) {
-                if(response.isSuccessful){
-                    println(response)
-                    success((response.body()!!))
-                }else{
-                    println(response.errorBody())
-                    println("ERROR - loadGames")
+        getRetroFit().getGames(ApiConfig.API_KEY, platformId, page, "name")
+            .enqueue(object : Callback<RawgData<List<GameEntity>>> {
+                override fun onResponse(
+                    call: Call<RawgData<List<GameEntity>>>,
+                    response: Response<RawgData<List<GameEntity>>>
+                ) {
+                    if (response.isSuccessful) {
+                        response.body()?.let { success(it) } ?: failure()
+                    } else {
+                        println(response.errorBody())
+                        println("ERROR - loadGames")
+                        failure()
+                    }
                 }
-            }
-            override fun onFailure(call: Call<RawgData<List<GameEntity>>>, t: Throwable) {
-                println(t.message)
-                failure()
-            }
-        })
+
+                override fun onFailure(call: Call<RawgData<List<GameEntity>>>, t: Throwable) {
+                    println(t.message)
+                    failure()
+                }
+            })
     }
 
+    fun searchGames(
+        query: String,
+        searchPrecise: Boolean,
+        searchExact: Boolean,
+        success: (listGames: RawgData<List<GameEntity>>) -> Unit,
+        failure: () -> Unit
+    ) {
 
-    fun searchGames(query: String, searchPrecise: Boolean, searchExact: Boolean, success: (listGames: RawgData<List<GameEntity>>) -> Unit, failure: () -> Unit) {
-
-        if(query.isEmpty()){
+        if (query.isEmpty()) {
+            failure() // Call failure callback if query is empty
             return
         }
 
-        getRetroFit().searchGames(ApiConfig.API_KEY, query,searchPrecise,searchExact).enqueue(object: Callback<RawgData<List<GameEntity>>> {
-            override fun onResponse(call: Call<RawgData<List<GameEntity>>>, response: Response<RawgData<List<GameEntity>>>) {
-                if(response.isSuccessful){
-                    println(response)
-                    success((response.body()!!))
-                }else{
-                    println(response.errorBody())
-                    println("ERROR - searchGames")
+        getRetroFit().searchGames(ApiConfig.API_KEY, query, searchPrecise, searchExact)
+            .enqueue(object : Callback<RawgData<List<GameEntity>>> {
+                override fun onResponse(
+                    call: Call<RawgData<List<GameEntity>>>,
+                    response: Response<RawgData<List<GameEntity>>>
+                ) {
+                    if (response.isSuccessful) {
+                        println(response)
+                        response.body()?.let { success(it) } ?: failure() // Handle null case
+                    } else {
+                        println(response.errorBody())
+                        println("ERROR - searchGames")
+                        failure() // Call failure callback on error response
+                    }
                 }
-            }
-            override fun onFailure(call: Call<RawgData<List<GameEntity>>>, t: Throwable) {
-                println(t.message)
-                failure()
-            }
-        })
+
+                override fun onFailure(call: Call<RawgData<List<GameEntity>>>, t: Throwable) {
+                    println(t.message)
+                    failure()
+                }
+            })
     }
 
-    fun loadGameDetails(gameId: Long, success: (gameDetails: Game) -> Unit, failure: () -> Unit) {
+    fun loadGameDetails(
+        gameId: Long,
+        success: (gameDetails: Game) -> Unit,
+        failure: () -> Unit
+    ) {
 
-        if(gameId <= 0){
+        if (gameId <= 0) {
+            failure()
             return
         }
 
-        getRetroFit().getGameDetails(gameId, ApiConfig.API_KEY).enqueue(object: Callback<Game> {
+        getRetroFit().getGameDetails(gameId, ApiConfig.API_KEY).enqueue(object : Callback<Game> {
             override fun onResponse(call: Call<Game>, response: Response<Game>) {
-                if(response.isSuccessful){
+                if (response.isSuccessful) {
                     println(response)
-                    success((response.body()!!))
-                }else{
+                    response.body()?.let { success(it) } ?: failure()
+                } else {
                     println(response.errorBody())
                     println("ERROR - loadGameDetails")
+                    failure()
                 }
             }
+
             override fun onFailure(call: Call<Game>, t: Throwable) {
                 println(t.message)
                 failure()
@@ -194,27 +236,38 @@ object API {
         })
     }
 
+    fun loadGameScreenshots(
+        gameId: Long,
+        success: (gameScreenshots: RawgData<List<ScreenShot>>) -> Unit,
+        failure: () -> Unit
+    ) {
 
-    fun loadGameScreenshots(gameId: Long, success: (gameScreenshots: RawgData<List<ScreenShot>>) -> Unit, failure: () -> Unit) {
-
-        if(gameId <= 0){
+        if (gameId <= 0) {
+            failure()
             return
         }
 
-        getRetroFit().getGameScreenshots(gameId, ApiConfig.API_KEY).enqueue(object: Callback<RawgData<List<ScreenShot>>> {
-            override fun onResponse(call: Call<RawgData<List<ScreenShot>>>, response: Response<RawgData<List<ScreenShot>>>) {
-                if(response.isSuccessful){
-                    println(response)
-                    success((response.body()!!))
-                }else{
-                    println(response.errorBody())
-                    println("ERROR - loadGameScreenshots")
+        getRetroFit().getGameScreenshots(gameId, ApiConfig.API_KEY)
+            .enqueue(object : Callback<RawgData<List<ScreenShot>>> {
+                override fun onResponse(
+                    call: Call<RawgData<List<ScreenShot>>>,
+                    response: Response<RawgData<List<ScreenShot>>>
+                ) {
+                    if (response.isSuccessful) {
+                        println(response)
+                        response.body()?.let { success(it) } ?: failure()
+                    } else {
+                        println(response.errorBody())
+                        println("ERROR - loadGameScreenshots")
+                        failure()
+                    }
                 }
-            }
-            override fun onFailure(call: Call<RawgData<List<ScreenShot>>>, t: Throwable) {
-                println(t.message)
-                failure()
-            }
-        })
+
+                override fun onFailure(call: Call<RawgData<List<ScreenShot>>>, t: Throwable) {
+                    println(t.message)
+                    failure()
+                }
+            })
     }
+
 }
